@@ -4,13 +4,8 @@ body {
     text-align: center;
 }
 
-h1 {
+h1, h2 {
     color: #333;
-}
-
-h2 {
-    color: #333;
-    margin-top: 30px;
 }
 
 p {
@@ -64,18 +59,75 @@ button:hover {
 #chatContainer {
     margin-top: 20px;
     text-align: center;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #chatContainer iframe {
     border: none;
     width: 100%;
     height: 600px;
-    border-radius: 5px;
 }
 
 iframe {
+    margin-top: 10px;
+}
+
+/* New styles */
+#login {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#login h2 {
+    color: #333;
+}
+
+#login p {
+    font-size: 16px;
+    color: #666;
+}
+
+#login input[type="password"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+}
+
+#login button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#login button:hover {
+    background-color: #0056b3;
+}
+
+section {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+form button {
     margin-top: 10px;
 }

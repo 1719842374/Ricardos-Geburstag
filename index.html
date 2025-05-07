@@ -5,30 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geburtstags-App</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS für die Zentrierung und Formatierung */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        img {
+            max-width: 100%; /* Bild passt sich der Breite an */
+            height: auto;
+            margin-top: 20px; /* Abstand zwischen Titel und Bild */
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Geburtstags-App</h1>
-    <p>Lade Fotos hoch, teile deinen Standort oder chatte mit anderen Gästen!</p>
-    
-    <!-- Location-Abschnitt -->
-    <h2>Location</h2>
-    <p>Die Geburtstagsfeier findet statt in: Musterstraße 123, 80331 München.</p>
-    <!-- Optional: Google Maps iframe (entfernen oder mit eigenem Code ersetzen) -->
-    <!--
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.163040849642!2d11.570085315608057!3d48.13710797922366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDA4JzEzLjYiTiAxMcKwMzQnMTIuMyJF!5e0!3m2!1sde!2sde!4v1635783923056!5m2!1sde!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    -->
+    <div id="login">
+        <h2>Willkommen zur Geburtstagsfeier!</h2>
+        <p>Bitte gib das Passwort ein, um fortzufahren.</p>
+        <input type="password" id="password" placeholder="Passwort">
+        <button id="loginButton">Anmelden</button>
+    </div>
 
-    <!-- Foto-Upload und Standortfreigabe -->
-    <input type="file" id="fileUpload" accept="image/*" multiple>
-    <button id="getLocation">Standort teilen</button>
-    <div id="imageContainer"></div>
-    <div id="locationContainer"></div>
-
-    <!-- Chat-Abschnitt -->
-    <h2>Chat</h2>
-    <p>Verbinde dich mit anderen Gästen! Wähle einen Benutzernamen und starte den Chat.</p>
-    <div id="chatContainer">
-        <iframe id="chat-frame" src="https://deadsimplechat.com/qmHSMAMkS" width="100%" height="600px"></iframe>
+    <div id="mainContent" style="display: none;">
+        <h1>Geburtstags-App</h1>
+        <img src="birthday_party.jpg" alt="Geburtstagsbild">
+        
+        <!-- Startseite -->
+        <section id="start" class="container">
+            <h2>Du bist eingeladen!</h2>
+            <p>Datum: 23. August 2025, 20:00 Uhr</p>
+            <p>Countdown: <span id="countdown"></span></p>
+        </section>
+        
+        <!-- Event-Details -->
+        <section id="event-details" class="container">
+            <h2>Event-Details</h2>
+            <p>Ort: <a href="https://www.mar-des-teix.eu/finca" target="_blank">Finca Mar d’es Teix</a></p>
+            <p><a href="https://www.google.de/maps/place/Finca+Mar+d%C2%B4es+Teix/@39.4794472,3.2461242,15.4z/data=!4m6!3m5!1s0x12964f80365c4779:0xde0511a85d781eb!8m2!3d39.481229!4d3.256254!16s%2Fg%2F11gblbxkd0?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank">Auf Google Maps anzeigen</a></p>
+            <!-- Google Maps iframe für Finca Mar d’es Teix -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.123456789!2d3.256077785320634!3d39.48144756486573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12964f80365c4779%3A0xde0511a85d781eb!2sFinca%20Mar%20d%C2%B4es%20Teix!5e0!3m2!1sde!2sde!4v1746549726685!5m2!1sde!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <p>Zeitplan: Empfang um 20:00, Dinner um 21:00, Musik und Tanzen ab 22:00</p>
+        </section>
+        
+        <!-- Zu-/Absagen -->
+        <section id="rsvp" class="container">
+            <h2>Zu-/Absagen</h2>
+            <form id="rsvpForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br>
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email"><br>
+                <label for="attending">Ich komme:</label>
+                <select id="attending" name="attending">
+                    <option value="yes">Ja</option>
+                    <option value="no">Nein</option>
+                </select><br>
+                <label for="accompanying">Begleitperson:</label>
+                <input type="text" id="accompanying" name="accompanying"><br>
+                <button type="submit">Absenden</button>
+            </form>
+        </section>
+        
+        <!-- Playlist-Wünsche -->
+        <section id="playlist" class="container">
+            <h2>Playlist-Wünsche</h2>
+            <p>Teile uns deine Musikwünsche mit!</p>
+            <textarea id="musicWishes" rows="4" cols="50"></textarea><br>
+            <button id="submitMusic">Absenden</button>
+        </section>
+        
+        <!-- Fotogalerie -->
+        <section id="photo-gallery" class="container">
+            <h2>Fotogalerie</h2>
+            <p>Lade deine Fotos hoch!</p>
+            <input type="file" id="fileUpload" accept="image/*" multiple>
+            <div id="imageContainer"></div>
+        </section>
+        
+        <!-- Gästebuch -->
+        <section id="guestbook" class="container">
+            <h2>Gästebuch</h2>
+            <p>Schreibe eine Nachricht an das Geburtstagskind!</p>
+            <textarea id="guestbookMessage" rows="4" cols="50"></textarea><br>
+            <button id="submitGuestbook">Absenden</button>
+            <div id="guestbookEntries"></div>
+        </section>
+        
+        <!-- Quiz -->
+        <section id="quiz" class="container">
+            <h2>Quiz: Wie gut kennst du das Geburtstagskind?</h2>
+            <p>Beantworte die Fragen und finde es heraus!</p>
+            <!-- Quiz questions here -->
+        </section>
+        
+        <!-- Menü & Sitzplan -->
+        <section id="menu-seating" class="container">
+            <h2>Menü & Sitzplan</h2>
+            <p>Menü: Tapas, Paella, Dessert</p>
+            <p>Sitzplan: Freie Platzwahl</p>
+        </section>
+        
+        <!-- Wunschliste -->
+        <section id="wishlist" class="container">
+            <h2>Wunschliste</h2>
+            <p>Ideen für Geschenke: Bücher, Wein, Spenden an XYZ</p>
+        </section>
+        
+        <!-- Chat -->
+        <section id="chat" class="container">
+            <h2>Chat</h2>
+            <p><a href="https://deadsimplechat.com/qmHSMAMkS" target="_blank">Tritt unserem Chat bei!</a></p>
+            <p>Verbinde dich mit anderen Gästen! Wähle einen Benutzernamen und starte den Chat.</p>
+            <div id="chatContainer">
+                <iframe id="chat-frame" src="https://deadsimplechat.com/qmHSMAMkS" width="100%" height="600px"></iframe>
+            </div>
+        </section>
+        
     </div>
 
     <script src="script.js"></script>

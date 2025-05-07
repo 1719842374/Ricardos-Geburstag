@@ -1,3 +1,33 @@
+// Login functionality
+document.getElementById('loginButton').addEventListener('click', function() {
+    const password = document.getElementById('password').value;
+    if (password === 'party2025') { // Replace with actual password
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
+        updateCountdown(); // Start countdown
+        setInterval(updateCountdown, 1000);
+    } else {
+        alert('Falsches Passwort');
+    }
+});
+
+// Countdown
+const partyDate = new Date('2025-08-23T20:00:00');
+
+function updateCountdown() {
+    const now = new Date();
+    const diff = partyDate - now;
+    if (diff > 0) {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        document.getElementById('countdown').innerText = `${days} Tage, ${hours} Stunden, ${minutes} Minuten, ${seconds} Sekunden`;
+    } else {
+        document.getElementById('countdown').innerText = 'Die Party hat begonnen!';
+    }
+}
+
 // Foto-Upload-Handler
 document.getElementById('fileUpload').addEventListener('change', handleFileSelect, false);
 
@@ -20,6 +50,8 @@ function handleFileSelect(event) {
         reader.onload = function(e) {
             const img = document.createElement('img');
             img.src = e.target.result;
+            img.style.maxWidth = '300px';
+            img.style.margin = '10px';
             imageContainer.appendChild(img);
         };
         reader.readAsDataURL(file);
@@ -63,3 +95,7 @@ function showError(error) {
             break;
     }
 }
+
+// Placeholder for other functionalities
+// e.g., RSVP form submission, music wishes, guestbook, etc.
+// These would require backend integration, which is not implemented here.
