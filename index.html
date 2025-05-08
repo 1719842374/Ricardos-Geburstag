@@ -6,25 +6,44 @@
     <title>Geburtstags-App</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* CSS für die Zentrierung und Formatierung */
+        /* Schriftarten von der Finca-Website */
+        @font-face {
+            font-family: PlayfairDisplay;
+            font-style: normal;
+            font-weight: 400;
+            src: url("/-_-/common/fonts/PlayfairDisplay-latin_latin-ext-regular.woff") format("woff");
+        }
+        @font-face {
+            font-family: SourceSansPro;
+            font-style: normal;
+            font-weight: 400;
+            src: url("/-_-/common/fonts/SourceSansPro-latin_latin-ext-regular.woff") format("woff");
+        }
+
+        /* Allgemeines Styling */
         body {
-            font-family: Arial, sans-serif;
+            font-family: SourceSansPro, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             text-align: center;
         }
         h1 {
+            font-family: PlayfairDisplay, serif;
             font-size: 2em;
             margin-bottom: 10px;
         }
+        h2 {
+            font-family: PlayfairDisplay, serif;
+        }
         img {
-            max-width: 100%; /* Bild passt sich der Breite an */
+            max-width: 100%;
             height: auto;
-            margin-top: 20px; /* Abstand zwischen Titel und Bild */
         }
         .video-container {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 Seitenverhältnis */
             height: 0;
-            margin-top: 20px; /* Abstand zwischen Bild und Video */
+            margin-top: 20px;
         }
         .video-container iframe {
             position: absolute;
@@ -42,8 +61,46 @@
             max-width: 600px;
         }
         #start.container {
-            width: 100%; /* Volle Breite, um mit dem Finca-Bild übereinzustimmen */
-            max-width: none; /* Entfernt die maximale Breitenbeschränkung */
+            width: 100%;
+            max-width: none;
+        }
+
+        /* Header mit Logo und Navigation */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #ccc;
+        }
+        .logo-container {
+            flex: 0 0 auto;
+        }
+        .logo-image {
+            max-width: 150px; /* Anpassung der Logo-Größe */
+            height: auto;
+        }
+        .navigation {
+            flex: 0 0 auto;
+        }
+        .navigation-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navigation-item {
+            margin-left: 20px;
+        }
+        .navigation-item a {
+            font-family: SourceSansPro, Arial, sans-serif;
+            font-size: 18px;
+            color: #444444;
+            text-decoration: none;
+        }
+        .navigation-item a:hover {
+            color: #1597ee; /* Akzentfarbe der Finca-Website */
         }
     </style>
 </head>
@@ -56,6 +113,24 @@
     </div>
 
     <div id="mainContent" style="display: none;">
+        <!-- Header mit Logo und Navigation -->
+        <header class="header">
+            <div class="logo-container">
+                <a href="/">
+                    <img src="blob:https://imgur.com/72ec4a77-7e86-49f4-8360-acd1830d07b9" alt="Logo" class="logo-image">
+                </a>
+            </div>
+            <nav class="navigation">
+                <ul class="navigation-list">
+                    <li class="navigation-item"><a href="#event-details">Eventdetails</a></li>
+                    <li class="navigation-item"><a href="#chat">Chatroom</a></li>
+                    <li class="navigation-item"><a href="#photo-gallery">Fotomediatek</a></li>
+                    <li class="navigation-item"><a href="#guestbook">Gästebuch</a></li>
+                    <li class="navigation-item"><a href="#rsvp">Zu/Absagen</a></li>
+                </ul>
+            </nav>
+        </header>
+
         <h1>Geburtstags-App</h1>
         <img src="https://i.imgur.com/tCF1m0g.png" alt="Geburtstagsbild" loading="lazy">
         
@@ -74,7 +149,6 @@
             <h2>Event-Details</h2>
             <p>Ort: <a href="https://www.mar-des-teix.eu/finca" target="_blank">Finca Mar d’es Teix</a></p>
             <p><a href="https://www.google.de/maps/place/Finca+Mar+d%C2%B4es+Teix/@39.4794472,3.2461242,15.4z/data=!4m6!3m5!1s0x12964f80365c4779:0xde0511a85d781eb!8m2!3d39.481229!4d3.256254!16s%2Fg%2F11gblbxkd0?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank">Auf Google Maps anzeigen</a></p>
-            <!-- Google Maps iframe für Finca Mar d’es Teix -->
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.123456789!2d3.256077785320634!3d39.48144756486573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12964f80365c4779%3A0xde0511a85d781eb!2sFinca%20Mar%20d%C2%B4es%20Teix!5e0!3m2!1sde!2sde!4v1746549726685!5m2!1sde!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             <p>Zeitplan: Empfang um 20:00, Dinner um 21:00, Musik und Tanzen ab 22:00</p>
         </section>
