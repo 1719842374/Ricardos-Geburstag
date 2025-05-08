@@ -20,10 +20,18 @@
             height: auto;
             margin-top: 20px; /* Abstand zwischen Titel und Bild */
         }
-        iframe {
-            max-width: 100%; /* Iframe passt sich der Breite an */
-            height: 315px; /* Feste Höhe für das Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Seitenverhältnis */
+            height: 0;
             margin-top: 20px; /* Abstand zwischen Bild und Video */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
         .container {
             margin: 20px auto;
@@ -52,7 +60,9 @@
             <h2>Du bist eingeladen!</h2>
             <p>Datum: 23. August 2025, 20:00 Uhr</p>
             <p>Countdown: <span id="countdown"></span></p>
-            <iframe src="https://imgur.com/a/uuI0K8s/embed" frameborder="0" allowfullscreen></iframe>
+            <div class="video-container">
+                <iframe src="https://player.vimeo.com/video/1082618091?h=a35bbd7944&badge=0&autopause=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" title="WhatsApp Video 2025-05-07 um 13.42.49_2d2504d5" allowfullscreen></iframe>
+            </div>
         </section>
         
         <!-- Event-Details -->
@@ -142,5 +152,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </body>
 </html>
