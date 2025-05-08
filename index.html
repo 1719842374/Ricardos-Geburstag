@@ -20,9 +20,9 @@
             height: auto;
             margin-top: 20px; /* Abstand zwischen Titel und Bild */
         }
-        video {
-            max-width: 100%; /* Video passt sich der Breite an */
-            height: auto;
+        iframe {
+            max-width: 100%; /* Iframe passt sich der Breite an */
+            height: 315px; /* Feste Höhe für das Video */
             margin-top: 20px; /* Abstand zwischen Bild und Video */
         }
         .container {
@@ -52,10 +52,7 @@
             <h2>Du bist eingeladen!</h2>
             <p>Datum: 23. August 2025, 20:00 Uhr</p>
             <p>Countdown: <span id="countdown"></span></p>
-            <video controls>
-                <source src="https://drive.google.com/uc?export=download&id=VIDEO_ID_HERE" type="video/mp4">
-                Dein Browser unterstützt das Video-Tag nicht.
-            </video>
+            <iframe src="https://imgur.com/a/uuI0K8s/embed" frameborder="0" allowfullscreen></iframe>
         </section>
         
         <!-- Event-Details -->
