@@ -11,19 +11,22 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
-            padding: 0; /* Ensure no default padding */
+            padding: 0;
+        }
+        .image-text-container {
+            display: flex; /* Flexbox für horizontale Ausrichtung */
+            align-items: center; /* Vertikale Zentrierung der Elemente */
+            gap: 20px; /* Abstand zwischen Bild und Text */
+            padding: 10px;
+            justify-content: center; /* Zentriert den Container horizontal */
         }
         h1 {
             font-size: 2em;
-            margin: 0;
-            margin-bottom: 10px;
-            padding: 0;
-            text-align: left; /* Align text to the left to match image */
+            margin: 0; /* Entfernt Standardabstände */
         }
-        img {
-            max-width: 100%;
+        .finca-image {
+            width: 300px; /* Feste Breite für das Bild, anpassbar */
             height: auto;
-            margin-top: 20px;
         }
         .video-container {
             position: relative;
@@ -121,8 +124,10 @@
                 </ul>
             </nav>
         </header>
-        <h1>Geburtstags-App</h1>
-        <img src="https://i.imgur.com/tCF1m0g.png" alt="Geburtstagsbild" loading="lazy">
+        <div class="image-text-container">
+            <img src="https://i.imgur.com/tCF1m0g.png" alt="Geburtstagsbild" class="finca-image" loading="lazy">
+            <h1>Geburtstags-App</h1>
+        </div>
         
         <!-- Startseite -->
         <section id="start" class="container">
@@ -204,7 +209,7 @@
         
         <!-- Quiz -->
         <section id="quiz" class="container">
-             <h2>Quiz: Wie gut kennst du das Geburtstagskind?</h2>
+            <h2>Quiz: Wie gut kennst du das Geburtstagskind?</h2>
             <p>Beantworte die Fragen und finde es heraus!</p>
         </section>
         
