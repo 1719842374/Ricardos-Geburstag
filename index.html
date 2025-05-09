@@ -46,6 +46,10 @@
             width: 100%;
             max-width: none;
         }
+        #hotel-tips.container {
+            width: 90%; /* Breiterer Container für Hotel Tipps */
+            max-width: 800px;
+        }
         /* Neue Stile für Header */
         header {
             display: flex;
@@ -58,9 +62,7 @@
             z-index: 100;
         }
         .logo {
-            border: 1px solid #ccc;
             border-radius: 5px;
-            padding: 5px;
         }
         .logo img {
             height: 50px;
@@ -81,10 +83,9 @@
             text-decoration: underline;
         }
         /* Styling für Hotel-Tipps */
-        #hotel-tips ul {
-            list-style: none;
+        #hotel-tips ol {
             padding: 0;
-            text-align: center; /* Zentriert die Liste */
+            text-align: center;
         }
         #hotel-tips li {
             margin-bottom: 10px;
@@ -102,7 +103,7 @@
     <div id="mainContent" style="display: none;">
         <header>
             <div class="logo">
-                <img src="https://i.imgur.com/9K5PqGn.jpg" alt="Logo">
+                <img src="https://i.imgur.com/uTmX35f.jpg" alt="Logo">
             </div>
             <nav>
                 <ul>
@@ -140,17 +141,16 @@
         <!-- Hotel Tipps -->
         <section id="hotel-tips" class="container">
             <h2>Hotel Tipps</h2>
-            <p>Liebe Freunde, ich freue mich mit Euch gemeinsam zu feiern 😊</p>
-            <p>Die Finca ist in der Nähe von Portocolom, hier noch ein paar Hoteltips in der Nähe:</p>
-            <ul>
-                <li>4* Bestes Hotel in Fussreichweite (45 min): <a href="https://www.iconvalparaiso.com/" target="_blank">Icon Valparaiso</a></li>
+            <p>Liebe Freunde, ich freue mich mit Euch gemeinsam zu feiern 😊 Die Finca ist in der Nähe von Portocolom, hier noch ein paar Hoteltips in der Nähe:</p>
+            <ol>
+                <li>Bestes Hotel in Fussreichweite (45 min): <a href="https://www.iconvalparaiso.com/" target="_blank">Icon Valparaiso</a></li>
                 <li><a href="https://www.hotelcalamurada.com/de/" target="_blank">Hotel Cala Murada</a></li>
                 <li>In Portocolom (15 min. mit dem Auto):</li>
-                <li>1* Einfach und Lebhaft: <a href="https://www.hostalportocolom.com/es/" target="_blank">Hostal Portocolom</a></li>
-                <li>3* Adults Only in schöner Lage am Meer: <a href="https://www.jshotels.com/de/js-cape-colom" target="_blank">JS Cape Colom</a></li>
-                <li>4* Fincahotel Luxuriös: <a href="https://www.sonamoixa.com" target="_blank">Son Amoixa</a></li>
-                <li>3* Sehr nettes Agroturismo in der Nähe: <a href="https://www.espicot.com" target="_blank">Espicot</a></li>
-            </ul>
+                <li>Einfach und Lebhaft: <a href="https://www.hostalportocolom.com/es/" target="_blank">Hostal Portocolom</a></li>
+                <li>Adults Only in schöner Lage am Meer: <a href="https://www.jshotels.com/de/js-cape-colom" target="_blank">JS Cape Colom</a></li>
+                <li>Fincahotel Luxuriös: <a href="https://www.sonamoixa.com" target="_blank">Son Amoixa</a></li>
+                <li>Sehr nettes Agroturismo in der Nähe: <a href="https://www.espicot.com" target="_blank">Espicot</a></li>
+            </ol>
         </section>
         
         <!-- Zu-/Absagen -->
