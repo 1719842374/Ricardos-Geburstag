@@ -1,0 +1,5 @@
+cd "C:\Users\Philip Diaz\OneDrive\Ricardos Geburstags App"
+git status
+git add index.html
+git commit -m "Beschreibe deine Änderung hier"
+git push origin main
