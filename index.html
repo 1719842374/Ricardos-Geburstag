@@ -6,7 +6,6 @@
     <title>Geburtstags-App</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* CSS für die Zentrierung und Formatierung */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -21,17 +20,17 @@
             font-size: 2em;
             margin: 0;
             margin-bottom: 10px;
-            text-align: left; /* Changed to left */
+            text-align: left;
         }
         img {
             max-width: 100%;
             height: auto;
             margin-top: 20px;
-            display: block; /* Added to ensure no inline spacing */
+            display: block;
         }
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Seitenverhältnis */
+            padding-bottom: 56.25%;
             height: 0;
             margin-top: 20px;
         }
@@ -49,7 +48,6 @@
             border-radius: 10px;
             width: 100%;
         }
-        /* Neue Stile für Header */
         header {
             display: flex;
             justify-content: space-between;
@@ -81,7 +79,6 @@
         nav a:hover {
             text-decoration: underline;
         }
-        /* Styling für Hotel-Tipps */
         #hotel-tips ol {
             padding: 0 0 0 20px;
             text-align: left;
@@ -97,8 +94,8 @@
         <h2>Willkommen zur Geburtstagsfeier!</h2>
         <p>Bitte gib das Passwort ein, um fortzufahren.</p>
         <input type="password" id="password" placeholder="Passwort">
-        <button id="loginButton">Anmelden</button
-
+        <button id="loginButton">Anmelden</button>
+        <p id="js-error" style="display: none; color: red;">Bitte aktiviere JavaScript, um fortzufahren.</p>
     </div>
 
     <div id="mainContent" style="display: none;">
@@ -120,7 +117,6 @@
         <h1>Geburtstags-App</h1>
         <img src="https://i.imgur.com/tCF1m0g.png" alt="Geburtstagsbild" loading="lazy">
         
-        <!-- Startseite -->
         <section id="start" class="container">
             <h2>Du bist eingeladen!</h2>
             <p>Datum: 23. August 2025, 20:00 Uhr</p>
@@ -130,7 +126,6 @@
             </div>
         </section>
         
-        <!-- Event-Details -->
         <section id="event-details" class="container">
             <h2>Event-Details</h2>
             <p>Ort: <a href="https://www.mar-des-teix.eu/finca" target="_blank">Finca Mar d’es Teix</a></p>
@@ -139,7 +134,6 @@
             <p>Zeitplan: Empfang um 20:00, Dinner um 21:00, Musik und Tanzen ab 22:00</p>
         </section>
         
-        <!-- Hotel Tipps -->
         <section id="hotel-tips" class="container">
             <h2>Hotel Tipps</h2>
             <p>Liebe Freunde, ich freue mich mit Euch gemeinsam zu feiern 😊 Die Finca ist in der Nähe von Portocolom, hier noch ein paar Hoteltips in der Nähe:</p>
@@ -154,7 +148,6 @@
             </ol>
         </section>
         
-        <!-- Zu-/Absagen -->
         <section id="rsvp" class="container">
             <h2>Zu-/Absagen</h2>
             <form id="rsvpForm">
@@ -173,7 +166,6 @@
             </form>
         </section>
         
-        <!-- Playlist-Wünsche -->
         <section id="playlist" class="container">
             <h2>Playlist-Wünsche</h2>
             <p>Teile uns deine Musikwünsche mit!</p>
@@ -181,7 +173,6 @@
             <button id="submitMusic">Absenden</button>
         </section>
         
-        <!-- Fotogalerie -->
         <section id="photo-gallery" class="container">
             <h2>Fotogalerie</h2>
             <p>Lade deine Fotos oder Videos hoch!</p>
@@ -189,7 +180,6 @@
             <div id="imageContainer"></div>
         </section>
         
-        <!-- Gästebuch -->
         <section id="guestbook" class="container">
             <h2>Gästebuch</h2>
             <p>Schreibe eine Nachricht an das Geburtstagskind!</p>
@@ -199,26 +189,22 @@
             <div id="guestbookEntries"></div>
         </section>
         
-        <!-- Quiz -->
         <section id="quiz" class="container">
             <h2>Quiz: Wie gut kennst du das Geburtstagskind?</h2>
             <p>Beantworte die Fragen und finde es heraus!</p>
         </section>
         
-        <!-- Menü & Sitzplan -->
         <section id="menu-seating" class="container">
             <h2>Menü & Sitzplan</h2>
             <p>Menü: Tapas, Paella, Dessert</p>
             <p>Sitzplan: Freie Platzwahl</p>
         </section>
         
-        <!-- Wunschliste -->
         <section id="wishlist" class="container">
             <h2>Wunschliste</h2>
             <p>Ideen für Geschenke: Bücher, Wein, Spenden an XYZ</p>
         </section>
         
-        <!-- Chat -->
         <section id="chat" class="container">
             <h2>Chat</h2>
             <p><a href="https://deadsimplechat.com/qmHSMAMkS" target="_blank">Tritt unserem Chat bei!</a></p>

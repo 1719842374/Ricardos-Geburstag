@@ -87,7 +87,6 @@ iframe {
     margin-top: 10px;
 }
 
-/* New styles */
 #login {
     text-align: center;
     margin-top: 50px;
@@ -99,6 +98,7 @@ iframe {
     margin: 5px;
     font-size: 16px;
 }
+
 #login button {
     background-color: #28a745;
     color: white;
@@ -106,4 +106,18 @@ iframe {
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
-}           
+}
+
+section p, section ol, section ul, section form {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 600px) {
+    form input, form select, form textarea {
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
