@@ -28,11 +28,18 @@
             margin-top: 20px;
             display: block;
         }
+        /* Finca-Bild auf volle Breite ohne Rand */
+        #finca-image {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             margin-top: 20px;
+            width: 100%; /* Video-Container auf volle Breite */
         }
         .video-container iframe {
             position: absolute;
@@ -87,6 +94,26 @@
             margin-bottom: 10px;
             padding-left: 5px;
         }
+        /* Zu-/Absagen-Formular in einer Zeile */
+        #rsvpForm {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        #rsvpForm label {
+            margin-right: 5px;
+        }
+        #rsvpForm input, #rsvpForm select {
+            padding: 5px;
+            margin: 0 5px;
+        }
+        #rsvpForm button {
+            padding: 5px 10px;
+        }
     </style>
 </head>
 <body>
@@ -115,7 +142,7 @@
             </nav>
         </header>
         <h1>Geburtstags-App</h1>
-        <img src="https://i.imgur.com/tCF1m0g.png" alt="Geburtstagsbild" loading="lazy">
+        <img id="finca-image" src="https://i.imgur.com/tCF1m0g.png" alt="Geburtstagsbild" loading="lazy">
         
         <section id="start" class="container">
             <h2>Du bist eingeladen!</h2>
@@ -152,16 +179,16 @@
             <h2>Zu-/Absagen</h2>
             <form id="rsvpForm">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name"><br>
+                <input type="text" id="name" name="name">
                 <label for="email">E-Mail:</label>
-                <input type="email" id="email" name="email"><br>
+                <input type="email" id="email" name="email">
                 <label for="attending">Ich komme:</label>
                 <select id="attending" name="attending">
                     <option value="yes">Ja</option>
                     <option value="no">Nein</option>
-                </select><br>
+                </select>
                 <label for="accompanying">Begleitperson:</label>
-                <input type="text" id="accompanying" name="accompanying"><br>
+                <input type="text" id="accompanying" name="accompanying">
                 <button type="submit">Absenden</button>
             </form>
         </section>
