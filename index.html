@@ -12,15 +12,21 @@
             margin: 0;
             padding: 0;
         }
+        #mainContent {
+            padding: 0;
+            margin: 0;
+        }
         h1 {
             font-size: 2em;
-            margin: 70px 0 10px 0;
+            margin: 0;
+            margin-bottom: 10px;
             text-align: left;
         }
         img {
             max-width: 100%;
             height: auto;
             margin-top: 20px;
+            display: block;
         }
         .video-container {
             position: relative;
@@ -36,20 +42,11 @@
             height: 100%;
         }
         .container {
-            margin: 20px auto;
+            margin: 20px 0;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-        }
-        #start.container {
             width: 100%;
-            max-width: none;
-        }
-        #hotel-tips.container {
-            width: 90%;
-            max-width: 800px;
         }
         header {
             display: flex;
@@ -98,12 +95,13 @@
         <p>Bitte gib das Passwort ein, um fortzufahren.</p>
         <input type="password" id="password" placeholder="Passwort">
         <button id="loginButton">Anmelden</button>
+        <p id="js-error" style="display: none; color: red;">Bitte aktiviere JavaScript, um fortzufahren.</p>
     </div>
 
     <div id="mainContent" style="display: none;">
         <header>
             <div class="logo">
-                <img src="[invalid url, do not cite] alt="Logo">
+                <img src="https://i.imgur.com/uTmX35f.jpg" alt="Logo">
             </div>
             <nav>
                 <ul>
@@ -117,7 +115,7 @@
             </nav>
         </header>
         <h1>Geburtstags-App</h1>
-        <img src="[invalid url, do not cite] alt="Geburtstagsbild" loading="lazy">
+        <img src="https://i.imgur.com/tCF1m0g.png" alt="Geburtstagsbild" loading="lazy">
         
         <section id="start" class="container">
             <h2>Du bist eingeladen!</h2>
@@ -130,9 +128,9 @@
         
         <section id="event-details" class="container">
             <h2>Event-Details</h2>
-            <p>Ort: <a href="[invalid url, do not cite] target="_blank">Finca Mar d’es Teix</a></p>
+            <p>Ort: <a href="https://www.mar-des-teix.eu/finca" target="_blank">Finca Mar d’es Teix</a></p>
             <p><a href="https://www.google.de/maps/place/Finca+Mar+d%C2%B4es+Teix/@39.4794472,3.2461242,15.4z/data=!4m6!3m5!1s0x12964f80365c4779:0xde0511a85d781eb!8m2!3d39.481229!4d3.256254!16s%2Fg%2F11gblbxkd0?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank">Auf Google Maps anzeigen</a></p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.123456789!2d3.256077785320634!3d39.48144756486573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12964f80365c4779%3A0xde0511a85d781eb!2sFinca%20Mar%20d%C2%B4es%20Teix!5e0!3m2!1sde!2sde!4v1746549726685!5m2!1sde!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.123456789!2d3.256077785320634!3d39.48144756486573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12964f80365c4779%3A0xde0511a85d781eb!2sFinca%20Mar%20d%C2%B4es%20Teix!5e0!3m2!1sde!2sde!4v1746549726685!5m2!1sde!2sde" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             <p>Zeitplan: Empfang um 20:00, Dinner um 21:00, Musik und Tanzen ab 22:00</p>
         </section>
         
@@ -140,13 +138,13 @@
             <h2>Hotel Tipps</h2>
             <p>Liebe Freunde, ich freue mich mit Euch gemeinsam zu feiern 😊 Die Finca ist in der Nähe von Portocolom, hier noch ein paar Hoteltips in der Nähe:</p>
             <ol>
-                <li>Bestes Hotel in Fussreichweite (45 min): <a href="[invalid url, do not cite] target="_blank">Icon Valparaiso</a></li>
-                <li><a href="[invalid url, do not cite] target="_blank">Hotel Cala Murada</a></li>
+                <li>Bestes Hotel in Fussreichweite (45 min): <a href="https://www.iconvalparaiso.com/" target="_blank">Icon Valparaiso</a></li>
+                <li><a href="https://www.hotelcalamurada.com/de/" target="_blank">Hotel Cala Murada</a></li>
                 <li>In Portocolom (15 min. mit dem Auto):</li>
-                <li>Einfach und Lebhaft: <a href="[invalid url, do not cite] target="_blank">Hostal Portocolom</a></li>
-                <li>Adults Only in schöner Lage am Meer: <a href="[invalid url, do not cite] target="_blank">JS Cape Colom</a></li>
-                <li>Fincahotel Luxuriös: <a href="[invalid url, do not cite] target="_blank">Son Amoixa</a></li>
-                <li>Sehr nettes Agroturismo in der Nähe: <a href="[invalid url, do not cite] target="_blank">Espicot</a></li>
+                <li>Einfach und Lebhaft: <a href="https://www.hostalportocolom.com/es/" target="_blank">Hostal Portocolom</a></li>
+                <li>Adults Only in schöner Lage am Meer: <a href="https://www.jshotels.com/de/js-cape-colom" target="_blank">JS Cape Colom</a></li>
+                <li>Fincahotel Luxuriös: <a href="https://www.sonamoixa.com" target="_blank">Son Amoixa</a></li>
+                <li>Sehr nettes Agroturismo in der Nähe: <a href="https://www.espicot.com" target="_blank">Espicot</a></li>
             </ol>
         </section>
         
@@ -177,8 +175,8 @@
         
         <section id="photo-gallery" class="container">
             <h2>Fotogalerie</h2>
-            <p>Lade deine Fotos hoch!</p>
-            <input type="file" id="fileUpload" accept="image/*" multiple>
+            <p>Lade deine Fotos oder Videos hoch!</p>
+            <input type="file" id="fileUpload" accept="image/*,video/*" multiple>
             <div id="imageContainer"></div>
         </section>
         
@@ -186,6 +184,7 @@
             <h2>Gästebuch</h2>
             <p>Schreibe eine Nachricht an das Geburtstagskind!</p>
             <textarea id="guestbookMessage" rows="4" cols="50"></textarea><br>
+            <input type="file" accept="image/*" id="guestbookPhoto"><br>
             <button id="submitGuestbook">Absenden</button>
             <div id="guestbookEntries"></div>
         </section>
@@ -208,15 +207,15 @@
         
         <section id="chat" class="container">
             <h2>Chat</h2>
-            <p><a href="[invalid url, do not cite] target="_blank">Tritt unserem Chat bei!</a></p>
+            <p><a href="https://deadsimplechat.com/qmHSMAMkS" target="_blank">Tritt unserem Chat bei!</a></p>
             <p>Verbinde dich mit anderen Gästen! Wähle einen Benutzernamen und starte den Chat.</p>
             <div id="chatContainer">
-                <iframe id="chat-frame" src="[invalid url, do not cite] width="100%" height="600px"></iframe>
+                <iframe id="chat-frame" src="https://deadsimplechat.com/qmHSMAMkS" width="100%" height="600px"></iframe>
             </div>
         </section>
     </div>
 
     <script src="script.js"></script>
-    <script src="[invalid url, do not cite]
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </body>
 </html>

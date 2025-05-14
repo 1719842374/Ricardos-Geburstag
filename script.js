@@ -156,15 +156,6 @@ document.getElementById('submitGuestbook').addEventListener('click', function() 
             }
         }
 
-        // Mülleimer-Symbol hinzufügen
-        const deleteButton = document.createElement('button');
-        deleteButton.className = 'delete-button';
-        deleteButton.innerText = '🗑️';
-        deleteButton.addEventListener('click', function() {
-            entryDiv.remove();
-        });
-        entryDiv.appendChild(deleteButton);
-
         guestbookEntries.prepend(entryDiv);
         document.getElementById('guestbookMessage').value = '';
         photoInput.value = '';
