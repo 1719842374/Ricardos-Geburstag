@@ -13,16 +13,21 @@
             margin: 0;
             padding: 0;
         }
+        #mainContent {
+            padding: 0;
+            margin: 0;
+        }
         h1 {
             font-size: 2em;
             margin: 0;
             margin-bottom: 10px;
-            text-align: center; /* Zentriert den Text */
+            text-align: left; /* Changed to left */
         }
         img {
-            max-width: 100%; /* Bild nimmt volle Breite ein */
+            max-width: 100%;
             height: auto;
             margin-top: 20px;
+            display: block; /* Added to ensure no inline spacing */
         }
         .video-container {
             position: relative;
@@ -38,11 +43,11 @@
             height: 100%;
         }
         .container {
-            margin: 20px 0; /* Nur obere und untere Ränder */
+            margin: 20px 0;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 10px;
-            width: 100%; /* Volle Breite */
+            width: 100%;
         }
         /* Neue Stile für Header */
         header {
@@ -64,7 +69,7 @@
         nav ul {
             list-style: none;
             display: flex;
-        gap: 20px;
+            gap: 20px;
             margin: 0;
             padding: 0;
         }
@@ -78,12 +83,12 @@
         }
         /* Styling für Hotel-Tipps */
         #hotel-tips ol {
-            padding: 0 0 0 20px; /* Reduziert den linken Abstand der Liste */
-            text-align: left; /* Links ausrichten */
+            padding: 0 0 0 20px;
+            text-align: left;
         }
         #hotel-tips li {
             margin-bottom: 10px;
-            padding-left: 5px; /* Minimaler Abstand zwischen Zahl und Text */
+            padding-left: 5px;
         }
     </style>
 </head>
@@ -92,7 +97,8 @@
         <h2>Willkommen zur Geburtstagsfeier!</h2>
         <p>Bitte gib das Passwort ein, um fortzufahren.</p>
         <input type="password" id="password" placeholder="Passwort">
-        <button id="loginButton">Anmelden</button>
+        <button id="loginButton">Anmelden</button
+
     </div>
 
     <div id="mainContent" style="display: none;">
@@ -142,7 +148,7 @@
                 <li><a href="https://www.hotelcalamurada.com/de/" target="_blank">Hotel Cala Murada</a></li>
                 <li>In Portocolom (15 min. mit dem Auto):</li>
                 <li>Einfach und Lebhaft: <a href="https://www.hostalportocolom.com/es/" target="_blank">Hostal Portocolom</a></li>
-                <li>Adults Only in schöner Lago am Meer: <a href="https://www.jshotels.com/de/js-cape-colom" target="_blank">JS Cape Colom</a></li>
+                <li>Adults Only in schöner Lage am Meer: <a href="https://www.jshotels.com/de/js-cape-colom" target="_blank">JS Cape Colom</a></li>
                 <li>Fincahotel Luxuriös: <a href="https://www.sonamoixa.com" target="_blank">Son Amoixa</a></li>
                 <li>Sehr nettes Agroturismo in der Nähe: <a href="https://www.espicot.com" target="_blank">Espicot</a></li>
             </ol>
@@ -178,8 +184,8 @@
         <!-- Fotogalerie -->
         <section id="photo-gallery" class="container">
             <h2>Fotogalerie</h2>
-            <p>Lade deine Fotos hoch!</p>
-            <input type="file" id="fileUpload" accept="image/*" multiple>
+            <p>Lade deine Fotos oder Videos hoch!</p>
+            <input type="file" id="fileUpload" accept="image/*,video/*" multiple>
             <div id="imageContainer"></div>
         </section>
         
@@ -188,6 +194,7 @@
             <h2>Gästebuch</h2>
             <p>Schreibe eine Nachricht an das Geburtstagskind!</p>
             <textarea id="guestbookMessage" rows="4" cols="50"></textarea><br>
+            <input type="file" accept="image/*" id="guestbookPhoto"><br>
             <button id="submitGuestbook">Absenden</button>
             <div id="guestbookEntries"></div>
         </section>

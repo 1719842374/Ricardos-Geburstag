@@ -37,29 +37,88 @@ function handleFileSelect(event) {
     imageContainer.innerHTML = ''; // Vorherige Bilder entfernen
 
     if (files.length === 0) {
-        imageContainer.innerHTML = '<p>Keine Bilder ausgewählt.</p>';
+        imageContainer.innerHTML = '<p>Keine Bilder oder Videos ausgewählt.</p>';
         return;
     }
 
     for (let i = 0; i < files.length; i++) {
         const file = files[i];
-        // Nur Bilddateien verarbeiten
-        if (!file.type.startsWith('image/')) continue;
+        // Bilder und Videos verarbeiten
+        if (!file.type.startsWith('image/') && !file.type.startsWith('video/')) continue;
 
         const reader = new FileReader();
         reader.onload = function(e) {
-            const img = document.createElement('img');
-            img.src = e.target.result;
-            img.style.maxWidth = '300px';
-            img.style.margin = '10px';
-            imageContainer.appendChild(img);
+            const mediaDiv = document.createElement('div');
+            mediaDiv.className = 'media-item';
+
+            let mediaElement;
+            if (file.type.startsWith('image/')) {
+                mediaElement = document.createElement('img');
+            } else {
+                mediaElement = document.createElement('video');
+                mediaElement.controls = true;
+            }
+            mediaElement.src = e.target.result;
+            mediaElement.style.maxWidth = '300px';
+            mediaElement.style.margin = '10px';
+
+            const deleteButton = document.createElement('button');
+            deleteButton.innerText = '🗑️';
+            deleteButton.addEventListener('click', function() {
+                mediaDiv.remove();
+            });
+
+            mediaDiv.appendChild(mediaElement);
+            mediaDiv.appendChild(deleteButton);
+            imageContainer.appendChild(mediaDiv);
         };
         reader.readAsDataURL(file);
     }
 }
 
+// Gästebuch-Handler
+document.getElementById('submitGuestbook').addEventListener('click', function() {
+    const message = document.getElementById('guestbookMessage').value;
+    const photoInput = document.getElementById('guestbookPhoto');
+    const guestbookEntries = document.getElementById('guestbookEntries');
+
+    if (!message) {
+        alert('Bitte eine Nachricht eingeben.');
+        return;
+    }
+
+    const entryDiv = document.createElement('div');
+    entryDiv.className = 'guestbook-entry';
+    entryDiv.style.borderBottom = '1px solid #ddd';
+    entryDiv.style.padding = '10px 0';
+    entryDiv.style.marginBottom = '10px';
+
+    const messageP = document.createElement('p');
+    messageP.innerText = message;
+    entryDiv.appendChild(messageP);
+
+    if (photoInput.files && photoInput.files[0]) {
+        const file = photoInput.files[0];
+        if (file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.style.maxWidth = '200px';
+                img.style.marginTop = '10px';
+                entryDiv.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    guestbookEntries.prepend(entryDiv); // Neuer Eintrag oben anzeigen
+    document.getElementById('guestbookMessage').value = ''; // Textarea leeren
+    photoInput.value = ''; // Datei-Input leeren
+});
+
 // Standort-Freigabe-Handler
-document.getElementById('getLocation').addEventListener('click', getLocation);
+document.getElementById('getLocation')?.addEventListener('click', getLocation);
 
 function getLocation() {
     const locationContainer = document.getElementById('locationContainer');
@@ -97,5 +156,5 @@ function showError(error) {
 }
 
 // Placeholder for other functionalities
-// e.g., RSVP form submission, music wishes, guestbook, etc.
+// e.g., RSVP form submission, music wishes, etc.
 // These would require backend integration, which is not implemented here.
