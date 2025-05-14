@@ -1,4 +1,3 @@
-// Check login state on page load
 document.addEventListener('DOMContentLoaded', function() {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
     if (isLoggedIn === 'true') {
@@ -6,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('mainContent').style.display = 'block';
         updateCountdown();
         setInterval(updateCountdown, 1000);
-        // Handle URL hash
         const hash = window.location.hash;
         if (hash) {
             const element = document.querySelector(hash);
@@ -15,22 +13,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     } else {
-        // Show JavaScript error message if JavaScript is disabled
         document.getElementById('js-error').style.display = 'block';
     }
 });
 
-// Login functionality
 document.getElementById('loginButton').addEventListener('click', function() {
     try {
         const password = document.getElementById('password').value;
         if (password === 'party2025') {
             document.getElementById('login').style.display = 'none';
             document.getElementById('mainContent').style.display = 'block';
-            localStorage.setItem('isLoggedIn', 'true'); // Persist login state
+            localStorage.setItem('isLoggedIn', 'true');
             updateCountdown();
             setInterval(updateCountdown, 1000);
-            // Handle URL hash after login
             const hash = window.location.hash;
             if (hash) {
                 const element = document.querySelector(hash);
@@ -47,7 +42,6 @@ document.getElementById('loginButton').addEventListener('click', function() {
     }
 });
 
-// Countdown
 const partyDate = new Date('2025-08-23T20:00:00');
 
 function updateCountdown() {
@@ -68,7 +62,6 @@ function updateCountdown() {
     }
 }
 
-// Foto-Upload-Handler
 document.getElementById('fileUpload').addEventListener('change', handleFileSelect, false);
 
 function handleFileSelect(event) {
@@ -119,7 +112,6 @@ function handleFileSelect(event) {
     }
 }
 
-// Gästebuch-Handler
 document.getElementById('submitGuestbook').addEventListener('click', function() {
     try {
         const message = document.getElementById('guestbookMessage').value;
@@ -164,7 +156,6 @@ document.getElementById('submitGuestbook').addEventListener('click', function() 
     }
 });
 
-// Standort-Freigabe-Handler
 document.getElementById('getLocation')?.addEventListener('click', getLocation);
 
 function getLocation() {
