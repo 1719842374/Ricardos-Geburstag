@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0; /* Angepasst, um mit Inline-Stil übereinzustimmen und seitliche Ränder zu vermeiden */
     text-align: center;
 }
 
@@ -111,7 +111,12 @@ section {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    max-width: 800px;
+    /* Entfernt max-width und auto margins, um volle Breite zu gewährleisten */
+}
+
+/* Verbessert die Lesbarkeit von Text bei voller Breite */
+section p, section ol, section ul, section form {
+    max-width: 800px; /* Begrenzt die Textbreite für bessere Lesbarkeit */
     margin-left: auto;
     margin-right: auto;
 }
@@ -126,6 +131,15 @@ form input, form select, form textarea {
     padding: 10px;
     margin-top: 5px;
     font-size: 16px;
+}
+
+/* Responsive Anpassung für Form-Elemente auf kleinen Bildschirmen */
+@media (max-width: 600px) {
+    form input, form select, form textarea {
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 form button {
