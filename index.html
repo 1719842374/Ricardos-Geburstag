@@ -40,6 +40,8 @@
             height: 0;
             margin-top: 20px;
             width: 100%; /* Video-Container auf volle Breite */
+            padding-left: 0;
+            padding-right: 0;
         }
         .video-container iframe {
             position: absolute;
@@ -55,6 +57,11 @@
             border-radius: 10px;
             width: 100%;
         }
+        /* Video-Section ohne Padding für volle Breite */
+        #start.container {
+            padding-left: 0;
+            padding-right: 0;
+        }
         header {
             display: flex;
             justify-content: space-between;
@@ -67,6 +74,9 @@
         }
         .logo {
             border-radius: 5px;
+            position: absolute;
+            top: 5px;
+            left: 5px;
         }
         .logo img {
             height: 50px;
@@ -94,11 +104,10 @@
             margin-bottom: 10px;
             padding-left: 5px;
         }
-        /* Zu-/Absagen-Formular in einer Zeile */
+        /* Zu-/Absagen-Formular untereinander mit Nummerierung */
         #rsvpForm {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             gap: 10px;
             max-width: 800px;
@@ -113,6 +122,21 @@
         }
         #rsvpForm button {
             padding: 5px 10px;
+        }
+        /* Gästebucheintrag mit Mülleimer-Symbol */
+        .guestbook-entry {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .guestbook-entry .delete-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
         }
     </style>
 </head>
@@ -178,16 +202,16 @@
         <section id="rsvp" class="container">
             <h2>Zu-/Absagen</h2>
             <form id="rsvpForm">
-                <label for="name">Name:</label>
+                <label for="name">1. Name:</label>
                 <input type="text" id="name" name="name">
-                <label for="email">E-Mail:</label>
+                <label for="email">2. E-Mail:</label>
                 <input type="email" id="email" name="email">
-                <label for="attending">Ich komme:</label>
+                <label for="attending">3. Ich komme:</label>
                 <select id="attending" name="attending">
                     <option value="yes">Ja</option>
                     <option value="no">Nein</option>
                 </select>
-                <label for="accompanying">Begleitperson:</label>
+                <label for="accompanying">4. Begleitperson:</label>
                 <input type="text" id="accompanying" name="accompanying">
                 <button type="submit">Absenden</button>
             </form>
