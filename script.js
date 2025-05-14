@@ -1,6 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    console.log('DOM fully loaded, setting up login functionality...');
+
+    // Check if localStorage is available
+    let isLoggedIn = false;
+    try {
+        isLoggedIn = localStorage.getItem('isLoggedIn');
+        console.log('localStorage isLoggedIn:', isLoggedIn);
+    } catch (error) {
+        console.error('localStorage error:', error);
+        alert('localStorage ist nicht verfügbar. Bitte deaktiviere den Inkognito-Modus oder überprüfe deine Browser-Einstellungen.');
+    }
+
+    // If already logged in, show main content
     if (isLoggedIn === 'true') {
+        console.log('User is already logged in, showing main content...');
         document.getElementById('login').style.display = 'none';
         document.getElementById('mainContent').style.display = 'block';
         updateCountdown();
@@ -13,32 +26,52 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     } else {
+        console.log('User not logged in, showing JavaScript error message...');
         document.getElementById('js-error').style.display = 'block';
     }
-});
 
-document.getElementById('loginButton').addEventListener('click', function() {
-    try {
-        const password = document.getElementById('password').value;
-        if (password === 'party2025') {
-            document.getElementById('login').style.display = 'none';
-            document.getElementById('mainContent').style.display = 'block';
-            localStorage.setItem('isLoggedIn', 'true');
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-            const hash = window.location.hash;
-            if (hash) {
-                const element = document.querySelector(hash);
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
+    // Set up login button event listener
+    const loginButton = document.getElementById('loginButton');
+    if (loginButton) {
+        console.log('Login button found, adding event listener...');
+        loginButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent any default behavior (e.g., form submission or redirect)
+            console.log('Login button clicked, processing password...');
+            try {
+                const password = document.getElementById('password').value;
+                console.log('Entered password:', password);
+                if (password === 'party2025') {
+                    console.log('Password correct, logging in...');
+                    document.getElementById('login').style.display = 'none';
+                    document.getElementById('mainContent').style.display = 'block';
+                    try {
+                        localStorage.setItem('isLoggedIn', 'true');
+                        console.log('localStorage updated: isLoggedIn set to true');
+                    } catch (error) {
+                        console.error('localStorage set error:', error);
+                        alert('Konnte den Login-Status nicht speichern. Funktionalität kann eingeschränkt sein.');
+                    }
+                    updateCountdown();
+                    setInterval(updateCountdown, 1000);
+                    const hash = window.location.hash;
+                    if (hash) {
+                        const element = document.querySelector(hash);
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                } else {
+                    console.log('Incorrect password entered');
+                    alert('Falsches Passwort');
                 }
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('Ein Fehler ist aufgetreten. Bitte überprüfe die Konsole.');
             }
-        } else {
-            alert('Falsches Passwort');
-        }
-    } catch (error) {
-        console.error('Login error:', error);
-        alert('Ein Fehler ist aufgetreten. Bitte überprüfe die Konsole.');
+        });
+    } else {
+        console.error('Login button not found in DOM');
+        alert('Login-Button nicht gefunden. Bitte überprüfe die Seite.');
     }
 });
 
