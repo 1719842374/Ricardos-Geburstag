@@ -15,12 +15,12 @@
         #mainContent {
             padding: 0;
             margin: 0;
+            padding-right: 300px; /* Platz für die Sidebar */
         }
         h1 {
             font-size: 2em;
-            margin: 0;
-            margin-bottom: 10px;
-            text-align: left;
+            margin: 80px 0 20px 0; /* Mehr Platz nach oben, um Überschneidung zu vermeiden */
+            text-align: center;
         }
         img {
             max-width: 100%;
@@ -39,7 +39,7 @@
             padding-bottom: 56.25%;
             height: 0;
             margin-top: 20px;
-            width: 100%; /* Video-Container auf volle Breite */
+            width: 100%;
             padding-left: 0;
             padding-right: 0;
         }
@@ -71,12 +71,10 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            height: 60px; /* Feste Höhe für den Header */
         }
         .logo {
             border-radius: 5px;
-            position: absolute;
-            top: 5px;
-            left: 5px;
         }
         .logo img {
             height: 50px;
@@ -138,6 +136,30 @@
             cursor: pointer;
             padding: 5px;
         }
+        /* Sidebar für Event-Details */
+        .sidebar {
+            position: fixed;
+            top: 60px; /* Unter dem Header */
+            right: 0;
+            width: 280px;
+            height: 100%;
+            background-color: #f9f9f9;
+            border-left: 1px solid #ccc;
+            padding: 20px;
+            overflow-y: auto;
+            z-index: 99;
+        }
+        .sidebar h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        .sidebar p {
+            font-size: 14px;
+        }
+        .sidebar iframe {
+            width: 100%;
+            height: 300px;
+        }
     </style>
 </head>
 <body>
@@ -177,13 +199,15 @@
             </div>
         </section>
         
-        <section id="event-details" class="container">
-            <h2>Event-Details</h2>
-            <p>Ort: <a href="https://www.mar-des-teix.eu/finca" target="_blank">Finca Mar d’es Teix</a></p>
-            <p><a href="https://www.google.de/maps/place/Finca+Mar+d%C2%B4es+Teix/@39.4794472,3.2461242,15.4z/data=!4m6!3m5!1s0x12964f80365c4779:0xde0511a85d781eb!8m2!3d39.481229!4d3.256254!16s%2Fg%2F11gblbxkd0?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank">Auf Google Maps anzeigen</a></p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.123456789!2d3.256077785320634!3d39.48144756486573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12964f80365c4779%3A0xde0511a85d781eb!2sFinca%20Mar%20d%C2%B4es%20Teix!5e0!3m2!1sde!2sde!4v1746549726685!5m2!1sde!2sde" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            <p>Zeitplan: Empfang um 20:00, Dinner um 21:00, Musik und Tanzen ab 22:00</p>
-        </section>
+        <div class="sidebar">
+            <section id="event-details">
+                <h2>Event-Details</h2>
+                <p>Ort: <a href="https://www.mar-des-teix.eu/finca" target="_blank">Finca Mar d’es Teix</a></p>
+                <p><a href="https://www.google.de/maps/place/Finca+Mar+d%C2%B4es+Teix/@39.4794472,3.2461242,15.4z/data=!4m6!3m5!1s0x12964f80365c4779:0xde0511a85d781eb!8m2!3d39.481229!4d3.256254!16s%2Fg%2F11gblbxkd0?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank">Auf Google Maps anzeigen</a></p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.123456789!2d3.256077785320634!3d39.48144756486573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12964f80365c4779%3A0xde0511a85d781eb!2sFinca%20Mar%20d%C2%B4es%20Teix!5e0!3m2!1sde!2sde!4v1746549726685!5m2!1sde!2sde" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <p>Zeitplan: Empfang um 20:00, Dinner um 21:00, Musik und Tanzen ab 22:00</p>
+            </section>
+        </div>
         
         <section id="hotel-tips" class="container">
             <h2>Hotel Tipps</h2>
