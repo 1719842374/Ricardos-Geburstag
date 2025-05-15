@@ -73,6 +73,16 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Login button not found in DOM');
         alert('Login-Button nicht gefunden. Bitte überprüfe die Seite.');
     }
+
+    // Smooth scroll for navigation (from Claude)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 });
 
 const partyDate = new Date('2025-08-23T20:00:00');
@@ -86,7 +96,7 @@ function updateCountdown() {
             const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            document.getElementById('countdown').innerText = `${days} Tage, ${hours} Stunden, ${minutes} Minuten, ${seconds} Sekunden`;
+            document.getElementById('countdown').innerText = `${days} Tage, ${hours} Std, ${minutes} Min, ${seconds} Sek`;
         } else {
             document.getElementById('countdown').innerText = 'Die Party hat begonnen!';
         }
@@ -237,3 +247,26 @@ function showError(error) {
         console.error('Show error:', error);
     }
 }
+
+// RSVP form submission
+document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Vielen Dank für deine Rückmeldung! Wir freuen uns auf dich!');
+    // In a real app, this would send data to a server
+    const formData = new FormData(this);
+    console.log('Form submitted:', Object.fromEntries(formData));
+    this.reset();
+});
+
+// Music wishes submission
+document.getElementById('submitMusic').addEventListener('click', function() {
+    const musicWishes = document.getElementById('musicWishes').value;
+    if (musicWishes.trim() !== '') {
+        alert('Danke für deinen Musikwunsch!');
+        document.getElementById('musicWishes').value = '';
+        // In a real app, this would send data to a server
+        console.log('Music wish submitted:', musicWishes);
+    } else {
+        alert('Bitte gib einen Musikwunsch ein!');
+    }
+});
