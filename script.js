@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('User is already logged in, showing main content...');
         document.getElementById('login').style.display = 'none';
         document.getElementById('mainContent').style.display = 'block';
-        startCountdown();
+        startCountdown(); // Sicherstellen, dass der Countdown immer startet
     } else {
         console.log('User not logged in, showing login section...');
         document.getElementById('login').style.display = 'block';
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         console.error('localStorage set error:', error);
                         alert('Konnte den Login-Status nicht speichern. Funktionalität kann eingeschränkt sein.');
                     }
-                    startCountdown();
+                    startCountdown(); // Countdown starten
                     const hash = window.location.hash;
                     if (hash) {
                         const element = document.querySelector(hash);
@@ -93,16 +93,34 @@ document.addEventListener('DOMContentLoaded', function() {
         function updateCountdown() {
             const now = new Date();
             const timeLeft = eventDate - now;
-            if (timeLeft > 0) {
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                document.getElementById('countdown').innerHTML = 
-                    `${days}T ${hours}h ${minutes}m ${seconds}s`;
-            } else {
-                document.getElementById('countdown').innerHTML = 'Die Party hat begonnen! 🎉';
+            if (timeLeft < 0) {
+                document.getElementById('countdown').innerHTML = "🎉 Die Feier hat begonnen! 🎉";
+                return;
             }
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            document.getElementById('countdown').innerHTML = `
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2em; font-weight: bold;">${days}</div>
+                        <div>Tage</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2em; font-weight: bold;">${hours}</div>
+                        <div>Stunden</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2em; font-weight: bold;">${minutes}</div>
+                        <div>Minuten</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2em; font-weight: bold;">${seconds}</div>
+                        <div>Sekunden</div>
+                    </div>
+                </div>
+            `;
         }
         updateCountdown();
         setInterval(updateCountdown, 1000);
