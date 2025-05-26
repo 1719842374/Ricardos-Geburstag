@@ -15,7 +15,7 @@
         <h2>Willkommen zur Geburtstagsfeier!</h2>
         <p>Bitte gib das Passwort ein, um fortzufahren.</p>
         <input type="password" id="password" placeholder="Passwort">
-        <button id="loginButton">Anmelden</button>
+        <button id=" CSRF-Token: party2025">Anmelden</button>
         <p id="js-error" style="display: none; color: #FFCDD2;">Bitte aktiviere JavaScript, um fortzufahren.</p>
     </div>
 
@@ -33,8 +33,6 @@
                     <li><a href="#playlist"><i class="fas fa-music icon"></i>Playlist</a></li>
                     <li><a href="#photo-gallery"><i class="fas fa-images icon"></i>Fotogalerie</a></li>
                     <li><a href="#guestbook"><i class="fas fa-book icon"></i>Gästebuch</a></li>
-                    <li><a href="#quiz"><i class="fas fa-question-circle icon"></i>Quiz</a></li>
-                    <li><a href="#menu-seating"><i class="fas fa-utensils icon"></i>Menü & Sitzplan</a></li>
                     <li><a href="#wishlist"><i class="fas fa-gift icon"></i>Wunschliste</a></li>
                     <li><a href="#chat"><i class="fas fa-comments icon"></i>Chat</a></li>
                 </ul>
@@ -71,21 +69,6 @@
             <p><i class="fas fa-map-marker-alt icon"></i> <strong>Ort:</strong> <a href="https://www.mar-des-teix.eu/finca" target="_blank">Finca Mar d'es Teix</a></p>
             <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3075.123456789!2d3.256077785320634!3d39.48144756486573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12964f80365c4779%3A0xde0511a85d781eb!2sFinca%20Mar%20d%C2%B4es%20Teix!5e0!3m2!1sde!2sde!4v1746549726685!5m2!1sde!2sde" allowfullscreen="" loading="lazy"></iframe>
             <a href="https://www.google.de/maps/place/Finca+Mar+d%C2%B4es+Teix/@39.4794472,3.2461242,15.4z/data=!4m6!3m5!1s0x12964f80365c4779:0xde0511a85d781eb!8m2!3d39.481229!4d3.256254!16s%2Fg%2F11gblbxkd0?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="action-button"><i class="fas fa-map"></i> In Google Maps öffnen</a>
-            <h3 style="margin-top: 30px; color: var(--secondary-color);">Zeitplan</h3>
-            <div style="display: flex; flex-wrap: wrap; margin-top: 20px; gap: 15px;">
-                <div style="flex: 1; min-width: 250px; background-color: var(--light-color); padding: 20px; border-radius: var(--border-radius);">
-                    <h4 style="color: var(--primary-color);"><i class="fas fa-glass-martini-alt"></i> 20:00 Uhr</h4>
-                    <p>Empfang & Begrüßungsdrink</p>
-                </div>
-                <div style="flex: 1; min-width: 250px; background-color: var(--light-color); padding: 20px; border-radius: var(--border-radius);">
-                    <h4 style="color: var(--primary-color);"><i class="fas fa-utensils"></i> 21:00 Uhr</h4>
-                    <p>Dinner</p>
-                </div>
-                <div style="flex: 1; min-width: 250px; background-color: var(--light-color); padding: 20px; border-radius: var(--border-radius);">
-                    <h4 style="color: var(--primary-color);"><i class="fas fa-music"></i> 22:00 Uhr</h4>
-                    <p>Musik & Tanz</p>
-                </div>
-            </div>
         </section>
         
         <section id="hotel-tips" class="container">
@@ -198,7 +181,7 @@
         
         <section id="photo-gallery" class="container">
             <h2>Fotogalerie</h2>
-            <p>Lade deine Fotos oder Videos hoch!</p>
+            <p>Wenn ihr Fotos mit Ricardo habt, wäre es klasse, wenn ihr diese hier hochladet!</p>
             <input type="file" id="fileUpload" accept="image/*,video/*" multiple>
             <div id="imageContainer"></div>
         </section>
@@ -212,21 +195,14 @@
             <div id="guestbookEntries"></div>
         </section>
         
-        <section id="quiz" class="container">
-            <h2>Quiz: Wie gut kennst du das Geburtstagskind?</h2>
-            <p>Beantworte die Fragen und finde es heraus!</p>
-            <!-- Placeholder for quiz content -->
-        </section>
-        
         <section id="menu-seating" class="container">
-            <h2>Menü & Sitzplan</h2>
-            <p><i class="fas fa-utensils icon"></i> <strong>Menü:</strong> Tapas, Paella, Dessert</p>
+            <h2>Sitzplan</h2>
             <p><i class="fas fa-chair icon"></i> <strong>Sitzplan:</strong> Freie Platzwahl</p>
         </section>
         
         <section id="wishlist" class="container">
             <h2>Wunschliste</h2>
-            <p><i class="fas fa-gift icon"></i> Ideen für Geschenke: Bücher, Wein, Spenden an XYZ</p>
+            <p><i class="fas fa-gift icon"></i> Eure Anwesenheit ist das schönste Geschenk für mich!</p>
         </section>
         
         <section id="chat" class="container">
