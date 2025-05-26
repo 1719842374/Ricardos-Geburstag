@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geburtstagsfeier 2025</title>
+    <title>Geburtstagsfeier 2025 - Mallorca</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,29 +21,31 @@
 
     <div id="mainContent" style="display: none;">
         <header>
-            <div class="logo">
-                <img src="https://i.imgur.com/uTmX35f.jpg" alt="Logo">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://i.imgur.com/uTmX35f.jpg" alt="Logo">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#start"><i class="fas fa-home icon"></i>Start</a></li>
+                        <li><a href="#event-details"><i class="fas fa-map-marker-alt icon"></i>Event</a></li>
+                        <li><a href="#hotel-tips"><i class="fas fa-bed icon"></i>Hotels</a></li>
+                        <li><a href="#contact"><i class="fas fa-address-card icon"></i>Kontakt</a></li>
+                        <li><a href="#playlist"><i class="fas fa-music icon"></i>Playlist</a></li>
+                        <li><a href="#photo-gallery"><i class="fas fa-images icon"></i>Fotogalerie</a></li>
+                        <li><a href="#impressions"><i class="fas fa-heart icon"></i>Impressionen</a></li>
+                        <li><a href="#wishlist"><i class="fas fa-gift icon"></i>Wunschliste</a></li>
+                        <li><a href="#morning-after"><i class="fas fa-coffee icon"></i>Morgen Danach</a></li>
+                        <li><a href="#chat"><i class="fas fa-comments icon"></i>Chat</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#start"><i class="fas fa-home icon"></i>Start</a></li>
-                    <li><a href="#event-details"><i class="fas fa-map-marker-alt icon"></i>Event</a></li>
-                    <li><a href="#hotel-tips"><i class="fas fa-bed icon"></i>Hotels</a></li>
-                    <li><a href="#rsvp"><i class="fas fa-check-circle icon"></i>RSVP</a></li>
-                    <li><a href="#playlist"><i class="fas fa-music icon"></i>Playlist</a></li>
-                    <li><a href="#photo-gallery"><i class="fas fa-images icon"></i>Fotogalerie</a></li>
-                    <li><a href="#guestbook"><i class="fas fa-book icon"></i>Gästebuch</a></li>
-                    <li><a href="#wishlist"><i class="fas fa-gift icon"></i>Wunschliste</a></li>
-                    <li><a href="#chat"><i class="fas fa-comments icon"></i>Chat</a></li>
-                </ul>
-            </nav>
         </header>
         
         <div class="banner">
-            <img src="https://i.imgur.com/tCF1m0g.png" alt="Geburtstagsbild">
             <div class="banner-content">
-                <h1 class="banner-title">Geburtstagsfeier 2025</h1>
-                <p class="banner-date">23. August 2025, 20:00 Uhr</p>
+                <h1>Geburtstagsfeier 2025</h1>
+                <p>23. August 2025, 20:00 Uhr - Mallorca</p>
                 <div class="countdown-box">
                     <span id="countdown">Wird geladen...</span>
                 </div>
@@ -51,15 +53,16 @@
         </div>
         
         <section id="start" class="container">
-            <h2>Du bist eingeladen!</h2>
+            <div class="palm-decoration palm-left">🌴</div>
+            <div class="palm-decoration palm-right">🌴</div>
+            <h2>Wir freuen uns auf Euch!</h2>
             <div class="special-note">
-                <p><i class="fas fa-glass-cheers"></i> Feiere mit uns einen unvergesslichen Abend auf Mallorca!</p>
+                <p><i class="fas fa-glass-cheers"></i> Viva la Vida - Feiert mit uns einen unvergesslichen Abend auf Mallorca!</p>
             </div>
-            <p style="font-size: 1.2rem; margin: 20px 0; font-style: italic; text-align: center;">"Viva la Vida - Es gibt keine Regeln für das Abenteuer namens Leben"</p>
+            <p style="font-size: 1.3rem; margin: 30px 0; font-style: italic; text-align: center; color: #065f46;">"Wir freuen uns mit Euch in meinen Geburtstag zu feiern"</p>
             <div class="video-container">
                 <iframe src="https://player.vimeo.com/video/1082618091?h=a35bbd7944&badge=0&autopause=0" allow="autoplay; fullscreen; picture-in-picture" title="Geburtstagseinladung" allowfullscreen></iframe>
             </div>
-            <a href="#rsvp" class="action-button"><i class="fas fa-check"></i> Jetzt zusagen</a>
         </section>
         
         <section id="event-details" class="container">
@@ -138,18 +141,18 @@
             </div>
         </section>
         
-        <section id="rsvp" class="container">
-            <h2>Zu-/Absagen</h2>
-            <p>Bitte teile uns mit, ob du an der Feier teilnehmen kannst:</p>
-            <form id="rsvpForm">
+        <section id="contact" class="container">
+            <h2>Meine Kontaktdaten</h2>
+            <p>Gerne kannst Du uns hier noch Deine Kontaktdaten hinterlegen:</p>
+            <form id="contactForm">
                 <div style="display: flex; flex-wrap: wrap; gap: 20px;">
                     <div style="flex: 1; min-width: 250px;">
-                        <label for="name"><i class="fas fa-user icon"></i> Name</label>
-                        <input type="text" id="name" name="name" placeholder="Dein Name" required>
+                        <label for="contactName"><i class="fas fa-user icon"></i> Name</label>
+                        <input type="text" id="contactName" name="contactName" placeholder="Dein Name" required>
                     </div>
                     <div style="flex: 1; min-width: 250px;">
-                        <label for="email"><i class="fas fa-envelope icon"></i> E-Mail</label>
-                        <input type="email" id="email" name="email" placeholder="deine@email.com" required>
+                        <label for="contactEmail"><i class="fas fa-envelope icon"></i> E-Mail</label>
+                        <input type="email" id="contactEmail" name="contactEmail" placeholder="deine@email.com" required>
                     </div>
                 </div>
                 <div style="display: flex; flex-wrap: wrap; gap: 20px;">
@@ -172,7 +175,7 @@
         <section id="playlist" class="container">
             <h2>Playlist-Wünsche</h2>
             <p>Welche Songs sollen auf der Party gespielt werden? Teile uns deine Musikwünsche mit!</p>
-            <div style="margin: 30px 0;">
+            <div class="spotify-container">
                 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5CTX11v7Kcy4GP9KdLf6no?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
             <textarea id="musicWishes" rows="4" placeholder="Deine Songwünsche hier eintragen..."></textarea>
@@ -186,18 +189,45 @@
             <div id="imageContainer"></div>
         </section>
         
-        <section id="guestbook" class="container">
-            <h2>Gästebuch</h2>
-            <p>Schreibe eine Nachricht an das Geburtstagskind!</p>
-            <textarea id="guestbookMessage" rows="4" cols="50" placeholder="Deine Nachricht..."></textarea>
-            <input type="file" accept="image/*" id="guestbookPhoto">
-            <button id="submitGuestbook"><i class="fas fa-book"></i> Absenden</button>
-            <div id="guestbookEntries"></div>
+        <section id="impressions" class="container">
+            <h2>Schreibt uns Eure Impressionen</h2>
+            <div class="questions">
+                <div class="question">
+                    <h4>1. An welche Erlebnisse erinnerst Du Dich mit Ricardo besonders gerne?</h4>
+                    <textarea id="memories" rows="4" placeholder="Erzähle uns von euren schönsten gemeinsamen Erinnerungen..."></textarea>
+                </div>
+                <div class="question">
+                    <h4>2. Was wünschst Du Ricardo für die nächsten 60 Lebensjahre?</h4>
+                    <textarea id="wishes60" rows="4" placeholder="Deine Wünsche für Ricardo..."></textarea>
+                </div>
+                <div class="question">
+                    <h4>3. Allgemeine Nachricht oder Grüße</h4>
+                    <textarea id="generalMessage" rows="4" placeholder="Deine persönliche Nachricht..."></textarea>
+                </div>
+            </div>
+            <input type="file" accept="image/*" id="impressionPhoto">
+            <button id="submitImpressions"><i class="fas fa-heart"></i> Impressionen absenden</button>
+            <div id="impressionEntries"></div>
         </section>
         
         <section id="wishlist" class="container">
             <h2>Wunschliste</h2>
-            <p><i class="fas fa-gift icon"></i> Eure Anwesenheit ist das schönste Geschenk für mich!</p>
+            <div class="special-note">
+                <p><i class="fas fa-heart"></i> Eure Anwesenheit ist das schönste Geschenk für mich!</p>
+            </div>
+        </section>
+
+        <section id="morning-after" class="container">
+            <h2>Der Morgen Danach</h2>
+            <div class="special-note">
+                <p><i class="fas fa-coffee"></i> Am Geburtstag, 24.08., könnt ihr gerne ab 11.00 Uhr zu einem kleinen Frühstück und einen entspannten Ausklang vorbeischauen.</p>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <p style="font-size: 1.2rem; color: #065f46;">
+                    <i class="fas fa-sun" style="color: #fbbf24; margin-right: 10px;"></i>
+                    Lasst uns den Tag gemeinsam ausklingen und bei einem entspannten Frühstück nochmal über die schönen Momente der Nacht sprechen!
+                </p>
+            </div>
         </section>
         
         <section id="chat" class="container">
@@ -205,12 +235,13 @@
             <p><a href="https://deadsimplechat.com/qmHSMAMkS" target="_blank" class="action-button"><i class="fas fa-comments"></i> Tritt unserem Chat bei!</a></p>
             <p>Verbinde dich mit anderen Gästen! Wähle einen Benutzernamen und starte den Chat.</p>
             <div id="chatContainer">
-                <iframe id="chat-frame" src="https://deadsimplechat.com/qmHSMAMkS" width="100%" height="600px"></iframe>
+                <iframe id="chat-frame" src="https://deadsimplechat.com/qmHSMAMkS" width="100%" height="600px" style="border-radius: 15px;"></iframe>
             </div>
         </section>
         
         <footer>
-            <p>© 2025 Geburtstagsfeier. Alle Rechte vorbehalten.</p>
+            <p>© 2025 Geburtstagsfeier Mallorca. Alle Rechte vorbehalten.</p>
+            <p style="margin-top: 10px; opacity: 0.8;">🌴 Viva la Vida auf Mallorca 🌴</p>
         </footer>
     </div>
 
