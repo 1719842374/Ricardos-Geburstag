@@ -92,18 +92,23 @@ header {
     border: 3px solid rgba(255,255,255,0.3);
 }
 
+nav {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+}
+
 nav ul {
     display: flex;
     list-style: none;
-    gap: 30px;
-    flex-wrap: wrap;
+    gap: 20px; /* Reduziert von 30px für bessere mobile Darstellung */
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 25px;
     transition: all 0.3s ease;
     display: flex;
@@ -458,17 +463,37 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .banner {
+        height: 50vh;
+        min-height: 400px;
+    }
+
     .banner-content h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     
     .banner-content p {
+        font-size: 1rem;
+    }
+
+    #countdown {
         font-size: 1.2rem;
     }
     
     nav ul {
-        flex-direction: column;
+        flex-direction: row; /* Bleibt horizontal auf einer Ebene */
+        overflow-x: auto;
         gap: 10px;
+        padding: 0 10px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    nav a .icon {
+        font-size: 1rem;
     }
     
     .hotel-grid {
@@ -477,7 +502,95 @@ footer {
     
     .container {
         margin-top: 20px;
-        padding: 40px 15px;
+        padding: 30px 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    .special-note {
+        font-size: 1.1rem;
+        padding: 20px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    input, select, textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    button, .action-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .map {
+        height: 300px;
+    }
+
+    #chat-frame {
+        height: 400px;
+    }
+
+    #imageContainer {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .guestbook-entry img {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner {
+        height: 40vh;
+        min-height: 350px;
+    }
+
+    .banner-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .banner-content p {
+        font-size: 0.9rem;
+    }
+
+    #countdown {
+        font-size: 1rem;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+
+    nav a .icon {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .special-note {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px 10px;
     }
 }
 
