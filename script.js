@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     } else {
-        console.log('User not logged in, showing JavaScript error message...');
+        console.log('User not logged in, showing login section...');
+        document.getElementById('login').style.display = 'block'; // Ensure login section is visible
         document.getElementById('js-error').style.display = 'block';
     }
 
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (loginButton) {
         console.log('Login button found, adding event listener...');
         loginButton.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent any default behavior (e.g., form submission or redirect)
+            event.preventDefault(); // Prevent any default behavior
             console.log('Login button clicked, processing password...');
             try {
                 const password = document.getElementById('password').value;
@@ -74,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Login-Button nicht gefunden. Bitte überprüfe die Seite.');
     }
 
-    // Smooth scroll for navigation (from Claude)
+    // Smooth scroll for navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -83,6 +84,17 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // Optional: Add a way to reset login status for testing
+    window.resetLogin = function() {
+        try {
+            localStorage.removeItem('isLoggedIn');
+            console.log('Login status reset');
+            location.reload();
+        } catch (error) {
+            console.error('Error resetting login status:', error);
+        }
+    };
 });
 
 const partyDate = new Date('2025-08-23T20:00:00');
@@ -199,60 +211,10 @@ document.getElementById('submitGuestbook').addEventListener('click', function() 
     }
 });
 
-document.getElementById('getLocation')?.addEventListener('click', getLocation);
-
-function getLocation() {
-    try {
-        const locationContainer = document.getElementById('locationContainer');
-        if (navigator.geolocation) {
-            locationContainer.innerHTML = '<p>Standort wird abgerufen...</p>';
-            navigator.geolocation.getCurrentPosition(showPosition, showError);
-        } else {
-            locationContainer.innerHTML = '<p>Geolokation wird von diesem Browser nicht unterstützt.</p>';
-        }
-    } catch (error) {
-        console.error('Geolocation error:', error);
-    }
-}
-
-function showPosition(position) {
-    try {
-        const locationContainer = document.getElementById('locationContainer');
-        locationContainer.innerHTML = 
-            `Latitude: ${position.coords.latitude.toFixed(4)}<br>` +
-            `Longitude: ${position.coords.longitude.toFixed(4)}`;
-    } catch (error) {
-        console.error('Show position error:', error);
-    }
-}
-
-function showError(error) {
-    try {
-        const locationContainer = document.getElementById('locationContainer');
-        switch(error.code) {
-            case error.PERMISSION_DENIED:
-                locationContainer.innerHTML = '<p>Zugriff auf Standort verweigert.</p>';
-                break;
-            case error.POSITION_UNAVAILABLE:
-                locationContainer.innerHTML = '<p>Standortinformationen nicht verfügbar.</p>';
-                break;
-            case error.TIMEOUT:
-                locationContainer.innerHTML = '<p>Zeitüberschreitung beim Abrufen des Standorts.</p>';
-                break;
-            default:
-                locationContainer.innerHTML = '<p>Ein Fehler ist aufgetreten.</p>';
-                break;
-        }
-    } catch (error) {
-        console.error('Show error:', error);
-    }
-}
-
 // RSVP form submission
 document.getElementById('rsvpForm').addEventListener('submit', function(e) {
     e.preventDefault();
     alert('Vielen Dank für deine Rückmeldung! Wir freuen uns auf dich!');
-    // In a real app, this would send data to a server
     const formData = new FormData(this);
     console.log('Form submitted:', Object.fromEntries(formData));
     this.reset();
@@ -264,7 +226,6 @@ document.getElementById('submitMusic').addEventListener('click', function() {
     if (musicWishes.trim() !== '') {
         alert('Danke für deinen Musikwunsch!');
         document.getElementById('musicWishes').value = '';
-        // In a real app, this would send data to a server
         console.log('Music wish submitted:', musicWishes);
     } else {
         alert('Bitte gib einen Musikwunsch ein!');
